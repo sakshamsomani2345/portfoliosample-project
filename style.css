@@ -1,0 +1,389 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --slantedText: "Grand Hotel";
+  --mainTransition: all 0.3s ease-in-out;
+}
+body {
+  line-height: 1.5;
+}
+.nav-btn{
+  position: fixed;
+  z-index:1;
+  top:0;
+  left:0;
+  color:rgb(25, 82, 25);
+  margin:1rem 1.3rem;
+  font-size:2rem;
+  animation:bounce 2s ease-in-out infinite;
+  cursor:pointer
+}
+@keyframes bounce {
+  0%{transform: scale(1);}
+  50%{transform: scale(1.5);}
+  100%{transform: scale(1);}
+}
+.navbar{
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:2;
+  background: gray;
+  padding-top: 1rem;
+  padding-left:2rem;
+  transition: var(--mainTransition);
+  transform: translateX(-100%);
+}
+.showNav{transform:translateX(0);}
+.nav-close{font-size: 2rem;
+cursor: pointer;}
+.nav-items{
+  list-style: none;
+}
+.nav-link{display: block;
+font-size:2rem;
+text-transform: uppercase;
+color:green;
+transition: var(--mainTransition);}
+.nav-link:hover{
+  color:tomato;
+  padding-left:0.5rem;
+}
+@media screen and (min-width:768px){
+  .navbar{width:30vw;
+  max-width: 20rem;}
+}
+.header {
+  min-height: 100vh;
+  background-image: url("tea.jpeg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover/center;
+  position: relative;
+}
+.banner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+.banner-subtitle {
+  font-family: var(--slantedText);
+  color: green;
+  font-size: 2rem;
+  animation: slidefromright 5s ease-in-out 1;
+}
+.banner-title {
+  font-size: 3rem;
+  color: wheat;
+  margin-top: 2.5rem;
+  line-height: 1.3;
+  animation: slidefromrleft 5s ease-in-out 1;
+}
+.banner-btn {
+  background: rgb(127, 216, 127);
+  padding: 0.8rem 1.2rem;
+  transition: var(--mainTransition);
+  text-decoration: none;
+  font-weight: bold;
+  color: grey;
+  margin-top: 2rem;
+  display: inline-block;
+  cursor: pointer;
+  letter-spacing: 1.2rem;
+  outline-offset: 3px;
+  outline: 0.2rem solid grey;
+  animation: show 5s ease-in-out 1s;
+}
+.main-button {
+  background: rgb(127, 216, 127);
+  padding: 0.8rem 1.2rem;
+  text-decoration: none;
+  font-weight: bold;
+  color: grey;
+  margin-top: 2rem;
+  display: inline-block;
+  cursor: pointer;
+  letter-spacing: 0.5rem;
+  outline-offset: 3px;
+  outline: 0.2rem solid grey;
+}
+.clearfix::after,
+.clearfix::before {
+  content: "";
+  clear: both;
+  display: table;
+}*/
+.banner-btn:hover {
+  color: white;
+  opacity: 0.5;
+}
+.main-button:hover {
+  color: white;
+  opacity: 0.5;
+}
+@keyframes show {
+  0% {
+    transform: scale(2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes slidefromright {
+  0% {
+    transform: translateX(1000px);
+  }
+  50% {
+    transform: translateX(-200px);
+  }
+  75% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@keyframes slidefromrleft {
+  0% {
+    transform: translateX(-1000px);
+  }
+  50% {
+    transform: translateX(-200px);
+  }
+  75% {
+    transform: translateX(-50px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+.text-center{text-align: center;}
+.skills {
+  background-color: grey;
+}
+.skill {
+  padding: 2.5rem 0;
+  text-align: center;
+  transition: var(--mainTransition);
+}
+.skill-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  transition: var(--mainTransition);
+}
+.skill-title {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  margin-bottom: 1.5rem;
+  color: rgb(127, 216, 127);
+  transition: var(--mainTransition);
+}
+.skill-text {
+  max-width: 50%;
+  margin: auto;
+}
+.skill:hover {
+  background-color: rgb(54, 104, 54);
+}
+.skill:hover .skill-title {
+  color: wheat;
+}
+.skill:hover .skill-icon {
+  transform: translateY(-5px); //IMPORTANT
+}
+@media screen and (min-width: 576px) {
+  .skill {
+    float: left;
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .skill {
+    float: left;
+    width: 25%;
+  }
+}
+/* about section */
+.section-center {
+  padding: 5rem 0;
+  width: 80vw;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.about-picture {
+  width: 100%;
+  display: block;
+  transition: var(--mainTransition);
+}
+.about-img,
+.about-info {
+  padding: 2rem 0;
+}
+.about-picture-container {
+  border: 0.5rem solid green;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.about-picture-container:hover .about-picture {
+  opacity: 0.5;
+  transform: scale(1.2);
+}
+.section-subtitle {
+  font-size: 2rem;
+  font-family: "grand hOtel";
+  letter-spacing: 1rem;
+  text-transform: capitalize;
+  color: rgb(53, 100, 53);
+}
+.section-title {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+.about-text {
+  margin: 1rem 0;
+  max-width: 26rem;
+}
+@media screen and (min-width: 992px) {
+  .about-img,
+  .about-info {
+    float: left;
+    width: 50%;
+    padding: 2rem;
+  }
+}
+
+/* product section */
+.products {
+  background-color: rgb(61, 58, 58);
+}
+.products-info,
+.products-inventory {
+  padding: 2rem 0;
+}
+.section-title {
+  color: wheat;
+}
+.product-text {
+  color: white;
+  margin: 1rem 0;
+  max-width: 26rem;
+}
+.product {
+  padding: 2rem 0;
+}
+.product-img {
+  width: 100%;
+  display: block;
+  border-radius: 0.4rem;
+  margin-bottom: 2rem;
+}
+.product-title {
+  color: wheat;
+  letter-spacing: 0.5rem;
+  font-family: var(--slantedText);
+}
+
+@media screen and (min-width: 768px) {
+  .product {
+    float: left;
+    width: 50%;
+  }
+  .products-info {
+    padding: 2rem 1rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .product {
+    float: left;
+    width: 33.3%;
+  }
+  .products-info {
+    padding: 2rem 1rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .products-info {
+    float: left;
+    width: 30%;
+  }
+  .products-info {
+    padding: 2rem 1rem;
+  }
+  .products-inventory {
+    float: left;
+    width: 70%;
+  }
+  .product {
+    padding: 1rem 1rem;
+  }
+}
+/* services */
+/*.services{background-color: gray;}
+.service-img{width: 100%;
+display: block;}
+.services-title{padding-top: 4rem;}
+.service-card{
+  border:10px solid grey;padding:0.2rem;
+  border-radius: 10rem;
+  margin:2rem 0;
+}*/
+/* contact page */
+.contact {
+  padding-top: 2rem;
+}
+.contact-item{margin-bottom: 3rem;}
+.contact-title{color:green;
+font-family: var(--slantedText);
+text-transform: uppercase;
+letter-spacing:.2rem;
+font-size:1.6rem;
+margin-bottom: 0.5rem;}
+.contact-text{text-transform: uppercase;}
+.form-control{display: block;
+width: 100%;border:none;
+border-bottom: 2px solid gray;
+outline: none;
+margin:2rem 0;
+padding:1.3rem 0;
+font-size:0.85rem;
+font-weight: bold;}
+.form-control::placeholder{color:green;
+text-transform: uppercase;
+letter-spacing: .5rem;}
+@media screen and (min-width: 992px) {
+  .contact-info,.class-form {
+    float:left;
+    width:50%;
+    padding:0 1 rem;
+  }
+  .contact-info{
+    padding-top:5rem;
+  }
+}
+.footer{background-color: rgb(73, 70, 70);text-align: center;height: 200px;
+}
+.social-icon{color:white;
+font-size:1rem;
+transition: var(--mainTransition);
+}
+.social-icon:hover{color:green;
+  text-transform: uppercase;
+  letter-spacing: .3rem;
+  margin-top: 1rem;
+  font-size:.85rem;
+}
+.footer-text{text-transform: uppercase;color: wheat;
+  letter-spacing: 1rem;}
+  .text-primary{color:green;}
